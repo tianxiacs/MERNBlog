@@ -1,0 +1,19 @@
+<%- include("partials/header.ejs") %>
+
+<h1>This is the blog edit page</h1>
+
+<form action="/blogs/<%= blog._id %>?_method=PUT" method="POST">
+    <div><input type="text" name="blog[title]" value="<%= blog.title %>"></div>
+    <div><input type="text" name="blog[imageUrl]" value="<%= blog.imageUrl %>"></div>
+    <div><textarea name="blog[content]" cols="30" rows="10"> <%= blog.content %> </textarea></div>
+    <input type="submit">
+</form>
+
+<form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+    <button>Delete</button>
+</form>
+
+<a href="/blogs/<%= blog._id %>"><button>Back to Details</button></a>
+<a href="/blogs"><button>Back to Overview</button></a>
+
+<%- include("partials/footer.ejs") %>

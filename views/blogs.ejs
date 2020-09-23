@@ -1,0 +1,22 @@
+<%- include("partials/header.ejs") %>
+
+<h1>This is the blog overview page</h1>
+
+<% for (let i = 0; i < blogs.length; i ++) { %>
+    <div> <%= blogs[i].title %> </div>
+    <img src="<%= blogs[i].imageUrl %>">
+    <div> <%= blogs[i].content.substring(0,3) %> </div>
+    <div> <%= blogs[i].timeOfCreation %> </div>
+    <div><a href="/blogs/<%= blogs[i]._id %>"><button>Details</button></a></div>
+    <div><a href="/blogs/<%= blogs[i]._id %>/edit"><button>Edit</button></a></div>
+
+    <form action="/blogs/<%= blogs[i]._id %>?_method=DELETE" method="POST">
+        <button>Delete</button>
+    </form>
+
+<% } %>
+
+<div><a href="/blogs/new"><button>Add New</button></a></div>
+<div><a href="/"><button>Back to landing page</button></a></div>
+
+<%- include("partials/footer.ejs") %>

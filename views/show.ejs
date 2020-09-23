@@ -1,0 +1,15 @@
+<%- include("partials/header.ejs") %>
+
+<div> <%= blog.title %> </div>
+<div> <img src="<%= blog.imageUrl %>"> </div>
+<div> <%= blog.content %>  </div>
+<div> <%= blog.timeOfCreation %> </div>
+
+<form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+    <button>Delete</button>
+</form>
+
+<a href="/blogs/<%= blog._id %>/edit"><button>Edit</button></a>
+<a href="/blogs"><button>Back to Overview</button></a>
+
+<%- include("partials/footer.ejs") %>

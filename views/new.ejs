@@ -1,0 +1,14 @@
+<%- include("partials/header.ejs") %>
+
+<h1>This is the blog add new page</h1>
+
+<form action="/blogs" method="POST">
+    <div><input type="text" name="blog[title]" placeholder="title"></div>
+    <div><input type="text" name="blog[imageUrl]" placeholder="Image Url"></div>
+    <div><textarea name="blog[content]" cols="30" rows="10"></textarea></div>
+    <input type="submit">
+</form>
+
+<a href="/blogs"><button>Back to Overview</button></a>
+
+<%- include("partials/footer.ejs") %>
