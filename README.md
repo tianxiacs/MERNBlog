@@ -14,6 +14,6 @@ Comments\
 API
 
 # Installation
-Download all files including all npm packages\
+Download all files and dependencies from package.json\
 Run in command line: $node index.js\
 Visit in browser: http://localhost:3000/
